@@ -12,9 +12,10 @@ class ItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
    
     return Card(
+      // color: Colors.grey[200],
       child: ListTile(
         onTap: () {
-          print("${item.name} pressed");
+          // print("${item.name} pressed");
         },
         leading: Image.network(
           item.image,
@@ -26,7 +27,7 @@ class ItemWidget extends StatelessWidget {
         trailing: Text(
           "Rs. ${item.price}",
           textScaleFactor: 1.1,
-          style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.blueGrey, fontWeight: FontWeight.bold),
         ),
       ),
     );
