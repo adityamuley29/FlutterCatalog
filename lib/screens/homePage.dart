@@ -4,6 +4,11 @@ import '../widgets/drawer.dart';
 import '../widgets/item_widget.dart';
 import '../models/catalog.dart';
 import 'dart:convert';
+import '../widgets/shimmer_effect.dart';
+
+
+
+
 
 class HomePage extends StatefulWidget {
   @override
@@ -49,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                 },
               )
             : Center(
-                child: CircularProgressIndicator(),
+                child: LoadingListPage(),
               ),
       ),
       drawer: MyDrawer(),
