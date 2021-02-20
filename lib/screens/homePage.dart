@@ -37,8 +37,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         backgroundColor: MyTheme.creamColor,
         body: SafeArea(
+          bottom: false,
           child: Container(
-            padding: EdgeInsets.all(24),
+            
+            padding: EdgeInsets.fromLTRB(20,24,20,0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -59,21 +61,24 @@ class _HomePageState extends State<HomePage> {
 class CatalogHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          "Catalog App",
-          style: TextStyle(
-              fontSize: 28,
-              color: MyTheme.blackColor,
-              fontWeight: FontWeight.w500),
-        ),
-        Text(
-          "Trending Products",
-          style: TextStyle(fontSize: 16),
-        )
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "Catalog App",
+            style: TextStyle(
+                fontSize: 28,
+                color: MyTheme.blackColor,
+                fontWeight: FontWeight.w500),
+          ),
+          Text(
+            "Trending Products",
+            style: TextStyle(fontSize: 16),
+          )
+        ],
+      ),
     );
   }
 }
