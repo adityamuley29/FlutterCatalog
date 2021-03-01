@@ -15,7 +15,7 @@ class HomeDetailPage extends StatelessWidget {
     return Scaffold(
       // backgroundColor: MyTheme.creamColor,
       appBar: AppBar(
-        // backgroundColor: MyTheme.creamColor,
+        backgroundColor: Colors.transparent,
         centerTitle: true,
         title: Text(
           catalog.name,
@@ -35,7 +35,9 @@ class HomeDetailPage extends StatelessWidget {
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
-                  color: Colors.white),
+                  color: MyTheme.blueColor,
+                  letterSpacing: 2
+                  ),
             ),
             RaisedButton(
               onPressed: () {},
@@ -43,7 +45,7 @@ class HomeDetailPage extends StatelessWidget {
                 "Buy",
                 style: TextStyle(fontSize: 16),
               ),
-              color: MyTheme.redColor,
+              color: MyTheme.blueColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(4),
               ),
@@ -66,15 +68,16 @@ class HomeDetailPage extends StatelessWidget {
               ),
             ),
             Expanded(
-              child: VxArc(
-                height: 20.0,
-                arcType: VxArcType.CONVEY,
-                edge: VxEdge.TOP,
-                child: Container(
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(40),
+                    topRight: Radius.circular(40),
+                  ),
                   color: MyTheme.blackColor,
                 ),
               ),
-            ),
+            )
           ],
         ),
       ),

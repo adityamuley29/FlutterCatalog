@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../widgets/drawer.dart';
-import '../widgets/item_widget.dart';
+import 'package:flutter_catalog/utils/routes.dart';
+// import '../widgets/drawer.dart';
+// import '../widgets/item_widget.dart';
 import '../models/catalog.dart';
 import 'dart:convert';
 import '../widgets/loader.dart';
@@ -51,10 +53,17 @@ class _HomePageState extends State<HomePage> {
                   child: CatalogList(),
                 )
               else
-                Expanded(child: Loader())
+                Expanded(child: Loader()),
             ],
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, MyRoutes.cartRoute);
+        },
+        child: Icon(Icons.add_shopping_cart),
+        backgroundColor: MyTheme.blackColor,
       ),
     );
   }
