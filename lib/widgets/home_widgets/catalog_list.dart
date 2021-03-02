@@ -44,7 +44,9 @@ class CatalogItem extends StatelessWidget {
         // width: 140,
         // height: 140,
         decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(8)),
+          color: Theme.of(context).cardColor,
+          borderRadius: BorderRadius.circular(8),
+        ),
         child: Row(
           children: [
             Hero(
@@ -65,31 +67,41 @@ class CatalogItem extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: MyTheme.blackColor),
+                        color: Theme.of(context).accentColor),
                   ),
                   Text(
                     catalog.desc,
                     style: TextStyle(
-                      color: Colors.grey[700],
+                      color: Theme.of(context).accentColor.withOpacity(0.7),
                       fontSize: 12,
                     ),
                   ),
                   ButtonBar(
                     alignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        "\$${catalog.price.toString()}",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17,
-                            color: MyTheme.redColor),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.attach_money,
+                            color: MyTheme.redColor,
+
+                          ),
+                          Text(
+                            "${catalog.price.toString()}",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17,
+                                letterSpacing: 1,
+                                color: Theme.of(context).accentColor),
+                          ),
+                        ],
                       ),
                       RaisedButton(
                         onPressed: () {},
                         child: Text(
                           "Add",
                         ),
-                        color: MyTheme.redColor,
+                        color: Theme.of(context).buttonColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(4),
                         ),

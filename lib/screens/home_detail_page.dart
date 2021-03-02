@@ -13,20 +13,13 @@ class HomeDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: MyTheme.creamColor,
+      backgroundColor: Theme.of(context).cardColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        centerTitle: true,
-        title: Text(
-          catalog.name,
-          style: TextStyle(
-            color: MyTheme.blackColor,
-          ),
-        ),
       ),
       bottomNavigationBar: Container(
         padding: EdgeInsets.all(10),
-        color: MyTheme.blackColor,
+        color: Theme.of(context).canvasColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -34,16 +27,17 @@ class HomeDetailPage extends StatelessWidget {
               "\$${catalog.price.toString()}",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 24,
-                  color: MyTheme.blueColor,
-                  letterSpacing: 2
-                  ),
+                  fontSize: 22,
+                  color: MyTheme.redColor,
+                  letterSpacing: 2),
             ),
             RaisedButton(
               onPressed: () {},
               child: Text(
                 "Buy",
-                style: TextStyle(fontSize: 16),
+                style: TextStyle(
+                  fontSize: 16,
+                ),
               ),
               color: MyTheme.blueColor,
               shape: RoundedRectangleBorder(
@@ -69,12 +63,34 @@ class HomeDetailPage extends StatelessWidget {
             ),
             Expanded(
               child: Container(
+                width: context.screenWidth,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(40),
-                    topRight: Radius.circular(40),
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
                   ),
-                  color: MyTheme.blackColor,
+                  color: Theme.of(context).canvasColor,
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      catalog.name,
+                      style: TextStyle(
+                          color: Theme.of(context).accentColor,
+                          fontSize: 35,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    Text(
+                      catalog.desc,
+                      style: TextStyle(
+                        color: Theme.of(context).accentColor.withOpacity(0.7),
+                        fontSize: 20,
+                        fontWeight: FontWeight.w100,
+                      ),
+                    )
+                  ],
                 ),
               ),
             )

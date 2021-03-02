@@ -17,7 +17,7 @@ class CatalogImage extends StatelessWidget {
         height: 100,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(4),
-          color: MyTheme.creamColor,
+          color: Theme.of(context).canvasColor,
         ),
         child: Image.network(
           image,

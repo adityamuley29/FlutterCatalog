@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/widgets/theams.dart';
 import '../utils/routes.dart';
 
 class LogIn extends StatefulWidget {
@@ -18,7 +19,7 @@ class _LogInState extends State<LogIn> {
         changeButton = true;
       });
       await Future.delayed(Duration(seconds: 1));
-      await Navigator.pushNamed(context, MyRoutes.homeRoute);
+      await Navigator.pushReplacementNamed(context, MyRoutes.homeRoute);
       setState(() {
         changeButton = false;
       });
@@ -28,7 +29,7 @@ class _LogInState extends State<LogIn> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.white,
+      color: Theme.of(context).canvasColor,
       child: SingleChildScrollView(
         child: Form(
           key: _formKey,
@@ -88,8 +89,7 @@ class _LogInState extends State<LogIn> {
                       validator: (value) {
                         if (value.isEmpty) {
                           return "Password cannot be empty!";
-                        }
-                        else if (value.length < 6) {
+                        } else if (value.length < 6) {
                           return "Password length must be Grater than 6 !";
                         }
                         return null;

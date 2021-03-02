@@ -38,12 +38,21 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    bool _isOn = false;
     return Scaffold(
-      backgroundColor: MyTheme.creamColor,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        actions: [
+          PopupMenuButton(
+            itemBuilder: (BuildContext context) => [],
+          )
+        ],
+      ),
+      backgroundColor: Theme.of(context).canvasColor,
       body: SafeArea(
         bottom: false,
         child: Container(
-          padding: EdgeInsets.fromLTRB(20, 24, 20, 0),
+          padding: EdgeInsets.fromLTRB(5, 0, 5, 30), //fromLTRB(5,24,5,0)
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -62,8 +71,11 @@ class _HomePageState extends State<HomePage> {
         onPressed: () {
           Navigator.pushNamed(context, MyRoutes.cartRoute);
         },
-        child: Icon(Icons.add_shopping_cart),
-        backgroundColor: MyTheme.blackColor,
+        child: Icon(
+          Icons.shopping_cart,
+          color: MyTheme.creamColor,
+        ),
+        backgroundColor: Theme.of(context).buttonColor,
       ),
     );
   }
