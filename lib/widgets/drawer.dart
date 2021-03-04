@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_catalog/widgets/theams.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key key}) : super(key: key);
@@ -10,7 +11,6 @@ class MyDrawer extends StatelessWidget {
         "https://yt3.ggpht.com/ytc/AAUvwniANevzv6YK5JAqylu5yY72IeRGAiTGJY0Y2j60SQ=s900-c-k-c0x00ffffff-no-rj";
     return Drawer(
       child: Container(
-        // color: Colors.blue[100],
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
@@ -28,7 +28,7 @@ class MyDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(
-                CupertinoIcons.home,
+                Icons.home,
                 // color: Colors.white,
               ),
               title: Text(
@@ -38,7 +38,7 @@ class MyDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(
-                CupertinoIcons.profile_circled,
+                Icons.person,
                 // color: Colors.white,
               ),
               title: Text(
@@ -48,7 +48,7 @@ class MyDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: Icon(
-                CupertinoIcons.mail,
+                Icons.mail,
                 // color: Colors.white,
               ),
               title: Text(
@@ -56,7 +56,48 @@ class MyDrawer extends StatelessWidget {
                 textScaleFactor: 1.2,
               ),
             ),
+            Divider(
+              height: 20,
+              thickness: 2,
+              color: Theme.of(context).cardColor,
+            ),
+            DarkTheme(),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class DarkTheme extends StatefulWidget {
+  DarkTheme({Key key}) : super(key: key);
+
+  @override
+  _DarkThemeState createState() => _DarkThemeState();
+}
+
+class _DarkThemeState extends State<DarkTheme> {
+  bool darkTheme = false;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: ListTile(
+        leading: Icon(
+          Icons.brightness_4,
+          // color: Colors.white,
+        ),
+        title: Text(
+          "Dark Theme",
+          textScaleFactor: 1.2,
+        ),
+        trailing: Switch(
+          activeColor: MyTheme.blueColor,
+          onChanged: (bool value) {
+            setState(() {
+              darkTheme = value;
+            });
+          },
+          value: darkTheme,
         ),
       ),
     );

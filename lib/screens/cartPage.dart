@@ -5,12 +5,13 @@ class Cart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Cart"),
+        title: Text(
+          "Shopping Cart",
+          style: TextStyle(color: Theme.of(context).accentColor),
+        ),
         centerTitle: true,
         backgroundColor: Colors.transparent,
       ),
-      
-      
     );
   }
 }

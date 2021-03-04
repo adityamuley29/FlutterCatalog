@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_catalog/utils/routes.dart';
-// import '../widgets/drawer.dart';
+import '../widgets/drawer.dart';
 // import '../widgets/item_widget.dart';
 import '../models/catalog.dart';
 import 'dart:convert';
@@ -17,8 +17,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var days = 30;
-
   @override
   void initState() {
     super.initState();
@@ -38,15 +36,10 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    bool _isOn = false;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        actions: [
-          PopupMenuButton(
-            itemBuilder: (BuildContext context) => [],
-          )
-        ],
+        actions: [],
       ),
       backgroundColor: Theme.of(context).canvasColor,
       body: SafeArea(
@@ -77,6 +70,7 @@ class _HomePageState extends State<HomePage> {
         ),
         backgroundColor: Theme.of(context).buttonColor,
       ),
+      drawer: MyDrawer(),
     );
   }
 }
