@@ -39,13 +39,21 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        actions: [],
+        actions: [
+          IconButton(
+            padding: EdgeInsets.only(right: 10),
+            icon: Icon(Icons.shopping_cart),
+            onPressed: () {
+              Navigator.pushNamed(context, MyRoutes.cartRoute);
+            },
+          )
+        ],
       ),
       backgroundColor: Theme.of(context).canvasColor,
       body: SafeArea(
         bottom: false,
         child: Container(
-          padding: EdgeInsets.fromLTRB(5, 0, 5, 30), //fromLTRB(5,24,5,0)
+          padding: EdgeInsets.fromLTRB(5, 0, 5, 0), //fromLTRB(5,24,5,0)
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -59,16 +67,6 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushNamed(context, MyRoutes.cartRoute);
-        },
-        child: Icon(
-          Icons.shopping_cart,
-          color: MyTheme.creamColor,
-        ),
-        backgroundColor: Theme.of(context).buttonColor,
       ),
       drawer: MyDrawer(),
     );

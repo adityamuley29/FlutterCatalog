@@ -8,7 +8,7 @@ class MyTheme {
         // Light Theam Colors below
         canvasColor: MyTheme.creamColor,
         cardColor: Colors.white,
-        buttonColor:Color(0xff00adb5),
+        buttonColor:Colors.blue,
         accentColor: MyTheme.blackColor,
 
 

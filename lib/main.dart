@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/homePage.dart';
 import 'screens/loginPage.dart';
 import 'screens/cartPage.dart';
+import 'screens/favoritesPage.dart';
 import 'utils/routes.dart';
 import 'widgets/theams.dart';
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.homeRoute: (context) => HomePage(),
         MyRoutes.loginRoute: (context) => LogIn(),
         MyRoutes.cartRoute: (context) => Cart(),
+        MyRoutes.myFavoriteRoute: (context) => MyFavoritesPage(),
       },
     );
   }

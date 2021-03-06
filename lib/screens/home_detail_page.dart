@@ -39,7 +39,7 @@ class HomeDetailPage extends StatelessWidget {
                   fontSize: 16,
                 ),
               ),
-              color: MyTheme.blueColor,
+              color: Theme.of(context).buttonColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(4),
               ),

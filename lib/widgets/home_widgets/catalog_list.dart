@@ -99,7 +99,7 @@ class CatalogItem extends StatelessWidget {
                       RaisedButton(
                         onPressed: () {},
                         child: Text(
-                          "Add",
+                          "Add",style: TextStyle(color: Theme.of(context).canvasColor),
                         ),
                         color: Theme.of(context).buttonColor,
                         shape: RoundedRectangleBorder(
