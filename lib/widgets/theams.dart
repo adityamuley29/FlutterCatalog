@@ -8,9 +8,8 @@ class MyTheme {
         // Light Theam Colors below
         canvasColor: MyTheme.creamColor,
         cardColor: Colors.white,
-        buttonColor:Colors.blue,
+        buttonColor: Colors.blue,
         accentColor: MyTheme.blackColor,
-
 
         primarySwatch: Colors.blue,
         fontFamily: GoogleFonts.poppins().fontFamily,
@@ -44,4 +43,18 @@ class MyTheme {
   static Color redColor = Color(0xffff2e63);
   static Color blackColor = Color(0xff252a34);
   static Color blueColor = Color(0xff08d9d6);
+}
+
+// Theme Provider 
+
+class ThemeChangerProvider with ChangeNotifier {
+  ThemeMode themeMode = ThemeMode.light;
+
+  bool get isDarkMode => themeMode == ThemeMode.dark;
+
+  void toggleTheme(bool isDark) {
+    themeMode = isDark ? ThemeMode.dark : ThemeMode.light;
+
+    notifyListeners();
+  }
 }

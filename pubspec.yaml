@@ -30,6 +30,10 @@ dependencies:
   google_fonts: ^1.1.2
   velocity_x: ^1.4.1
 
+  # state management
+
+  provider: ^4.3.2+3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

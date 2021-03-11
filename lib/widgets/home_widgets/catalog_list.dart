@@ -38,6 +38,7 @@ class CatalogItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isFavorite = false;
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: Container(
@@ -62,19 +63,43 @@ class CatalogItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    catalog.name,
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).accentColor),
-                  ),
-                  Text(
-                    catalog.desc,
-                    style: TextStyle(
-                      color: Theme.of(context).accentColor.withOpacity(0.7),
-                      fontSize: 12,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Flexible(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              catalog.name,
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Theme.of(context).accentColor),
+                            ),
+                            Text(
+                              catalog.desc,
+                              overflow: TextOverflow.fade,
+                              style: TextStyle(
+                                color: Theme.of(context)
+                                    .accentColor
+                                    .withOpacity(0.7),
+                                fontSize: 12,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 4),
+                        child: IconButton(
+                          icon: Icon(Icons.favorite, color: Colors.red),
+                          onPressed: () {
+                            Colors.white;
+                          },
+                        ),
+                      )
+                    ],
                   ),
                   ButtonBar(
                     alignment: MainAxisAlignment.spaceBetween,
@@ -84,7 +109,6 @@ class CatalogItem extends StatelessWidget {
                           Icon(
                             Icons.attach_money,
                             color: MyTheme.redColor,
-
                           ),
                           Text(
                             "${catalog.price.toString()}",
@@ -99,7 +123,9 @@ class CatalogItem extends StatelessWidget {
                       RaisedButton(
                         onPressed: () {},
                         child: Text(
-                          "Add",style: TextStyle(color: Theme.of(context).canvasColor),
+                          "Add",
+                          style:
+                              TextStyle(color: Theme.of(context).canvasColor),
                         ),
                         color: Theme.of(context).buttonColor,
                         shape: RoundedRectangleBorder(

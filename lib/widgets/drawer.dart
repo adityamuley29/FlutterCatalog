@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_catalog/widgets/theams.dart';
 import '../screens/favoritesPage.dart';
 import '../screens/cartPage.dart';
+import 'package:provider/provider.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({Key key}) : super(key: key);
@@ -103,17 +104,11 @@ class MyDrawer extends StatelessWidget {
   }
 }
 
-class DarkTheme extends StatefulWidget {
-  DarkTheme({Key key}) : super(key: key);
-
-  @override
-  _DarkThemeState createState() => _DarkThemeState();
-}
-
-class _DarkThemeState extends State<DarkTheme> {
-  bool darkTheme = false;
+class DarkTheme extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeChangerProvider>(context);
+
     return Container(
       child: ListTile(
         leading: Icon(
@@ -124,14 +119,14 @@ class _DarkThemeState extends State<DarkTheme> {
           "Dark Theme",
           textScaleFactor: 1.2,
         ),
-        trailing: Switch(
-          activeColor: MyTheme.blueColor,
+        trailing: Switch.adaptive(
+          activeColor: Theme.of(context).buttonColor,
           onChanged: (bool value) {
-            setState(() {
-              darkTheme = value;
-            });
+            final provider =
+                Provider.of<ThemeChangerProvider>(context, listen: false);
+            provider.toggleTheme(value);
           },
-          value: darkTheme,
+          value: themeProvider.isDarkMode,
         ),
       ),
     );
