@@ -18,6 +18,7 @@ class Item {
   final num price;
   final String color;
   final String image;
+  bool isFavorite = false;
 
   Item({
     this.id,
@@ -102,3 +103,5 @@ class Item {
         image.hashCode;
   }
 }
+
+

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_catalog/widgets/theams.dart';
+
 import '../utils/routes.dart';
 
 class LogIn extends StatefulWidget {
@@ -13,7 +13,7 @@ class _LogInState extends State<LogIn> {
 
   final _formKey = GlobalKey<FormState>();
 
-  moveToHome(BuildContext Context) async {
+  moveToHome(BuildContext context) async {
     if (_formKey.currentState.validate()) {
       setState(() {
         changeButton = true;

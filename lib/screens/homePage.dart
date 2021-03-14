@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_catalog/utils/routes.dart';
 import '../widgets/drawer.dart';
-// import '../widgets/item_widget.dart';
+
 import '../models/catalog.dart';
 import 'dart:convert';
 import '../widgets/loader.dart';
-import '../widgets/theams.dart';
+
 import 'package:flutter_catalog/widgets/home_widgets/catalog_header.dart';
 import 'package:flutter_catalog/widgets/home_widgets/catalog_list.dart';
 
